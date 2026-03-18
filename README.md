@@ -1,56 +1,61 @@
-# MemoryRelay Skills
+# MemoryRelay Plugin Marketplace
 
-Guided workflow skills for [MemoryRelay](https://memoryrelay.com) — persistent memory, architectural decisions, reusable patterns, project orchestration, and knowledge graphs for AI agents.
-
-## Skills
-
-| Skill | When to Use |
-|-------|-------------|
-| `memory-workflow` | Starting a session, storing/retrieving memories, managing tiers and deduplication |
-| `decision-tracking` | Making architectural choices, checking for existing decisions, superseding outdated ones |
-| `pattern-management` | Establishing reusable conventions, searching before creating, adopting across projects |
-| `project-orchestration` | Loading project context, checking cross-project impact, managing dependencies |
-| `entity-and-context` | Building knowledge graphs, linking entities to memories, enriched recall |
+Claude Code plugin marketplace for [MemoryRelay](https://memoryrelay.com).
 
 ## Installation
 
-### Claude Code
+Add this marketplace to Claude Code, then install the `memoryrelay` plugin:
 
-Install via the plugin marketplace:
+```bash
+# Add the marketplace
+claude plugins add-marketplace memoryrelay/memory-relay-skills
 
+# Install the plugin
+claude plugins install memoryrelay@memoryrelay
 ```
-/install-plugin memory-relay-skills
-```
 
-Or add to your project's `.claude/settings.json`:
+Or manually add to `~/.claude/plugins/known_marketplaces.json`:
 
 ```json
 {
-  "enabledPlugins": {
-    "memory-relay-skills@claude-plugins-official": true
+  "memoryrelay": {
+    "source": {
+      "source": "github",
+      "repo": "memoryrelay/memory-relay-skills"
+    }
   }
 }
 ```
 
-### Prerequisites
+Then enable in your project's `.claude/settings.json`:
 
-MemoryRelay tools must be available in your environment. This is typically provided by the [MemoryRelay MCP server](https://github.com/memoryrelay/mcp-server) or the [OpenClaw plugin](https://github.com/memoryrelay/openclaw-plugin).
+```json
+{
+  "enabledPlugins": {
+    "memoryrelay@memoryrelay": true
+  }
+}
+```
 
-## Usage
+## Available Plugins
 
-Skills are invoked automatically when your task matches their description. You can also invoke them explicitly:
+### memoryrelay
 
-- `/memory-workflow` — Follow the full session lifecycle
-- `/decision-tracking` — Record or check architectural decisions
-- `/pattern-management` — Create or search reusable patterns
-- `/project-orchestration` — Load context and analyze impact
-- `/entity-and-context` — Build and traverse knowledge graphs
+Persistent memory, architectural decisions, reusable patterns, project orchestration, and knowledge graphs for AI agents.
 
-## Links
+**Skills:**
 
-- [MemoryRelay](https://memoryrelay.com)
-- [MCP Server](https://github.com/memoryrelay/mcp-server)
-- [OpenClaw Plugin](https://github.com/memoryrelay/openclaw-plugin)
+| Skill | Description |
+|-------|-------------|
+| `memory-workflow` | Session lifecycle, storing/retrieving memories, tiers, deduplication |
+| `decision-tracking` | Architectural decision records, check before deciding, supersede outdated |
+| `pattern-management` | Reusable conventions, search before creating, adopt across projects |
+| `project-orchestration` | Load project context, check cross-project impact, manage dependencies |
+| `entity-and-context` | Knowledge graphs, link entities to memories, enriched recall |
+
+## Prerequisites
+
+MemoryRelay tools must be available via the [MemoryRelay MCP server](https://github.com/memoryrelay/mcp-server) or the [OpenClaw plugin](https://github.com/memoryrelay/openclaw-plugin).
 
 ## License
 
