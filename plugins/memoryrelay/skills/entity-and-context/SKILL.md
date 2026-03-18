@@ -1,6 +1,6 @@
 ---
 name: entity-and-context
-description: "Use when building relationship maps between people, systems, services, or concepts that appear across multiple memories, or when recalling information that benefits from entity connections rather than flat search."
+description: "Use when building relationship maps between people, organizations, projects, or concepts that appear across multiple memories, or when recalling information that benefits from entity connections rather than flat search."
 ---
 
 # Entity and Context
@@ -15,7 +15,7 @@ Entities turn flat memory storage into a connected knowledge graph. Create entit
 | `entity_link` | `entity_link(entity_id, memory_id, relationship?)` | Connect an entity to a memory |
 | `entity_list` | `entity_list(limit?, offset?)` | List entities with pagination |
 | `entity_graph` | `entity_graph(entity_id, depth?, max_neighbors?)` | Explore an entity's neighborhood |
-| `memory_context` | `memory_context(query, token_budget?)` | Enriched recall with entity connections |
+| `memory_context` | `memory_context(query, token_budget?)` | Enriched recall with entity connections (see `memory-workflow` skill) |
 
 ## Entity Types
 
@@ -38,7 +38,7 @@ Create an entity when a named thing:
 ## Linking Workflow
 
 1. **Create the entity** — `entity_create("AuthService", "concept", { "domain": "security" })`
-2. **Store related memories** — `memory_store(content, metadata)` as usual
+2. **Store related memories** — `memory_store(content, metadata)` as usual (see `memory-workflow` skill)
 3. **Link them** — `entity_link(entity_id, memory_id, "mentioned_in")` to connect entity to each relevant memory
 4. **Query with context** — `memory_context("authentication flow")` returns memories enriched with linked entity data
 5. **Explore connections** — `entity_graph(entity_id, 2, 10)` to see related memories and co-linked entities up to 2 hops away
