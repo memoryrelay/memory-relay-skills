@@ -1,0 +1,9 @@
+{
+  "name": "memory-relay-skills",
+  "description": "Guided workflows for MemoryRelay — persistent memory, architectural decisions, reusable patterns, project orchestration, and knowledge graphs for AI agents.",
+  "version": "1.0.0",
+  "author": {
+    "name": "MemoryRelay",
+    "email": "support@memoryrelay.com"
+  }
+}
