@@ -1,10 +1,8 @@
-# MemoryRelay Plugin Marketplace
+# MemoryRelay Skills for Claude Code
 
 Claude Code plugin marketplace for [MemoryRelay](https://memoryrelay.com).
 
 ## Installation
-
-Add this marketplace to Claude Code, then install the `memoryrelay` plugin:
 
 ```bash
 # Add the marketplace
@@ -37,15 +35,9 @@ Then enable in your project's `.claude/settings.json`:
 }
 ```
 
-## Available Plugins
+## Skills
 
-### memoryrelay
-
-Persistent memory, architectural decisions, reusable patterns, project orchestration, and knowledge graphs for AI agents.
-
-**Skills:**
-
-| Skill | Description |
+| Skill | When to Use |
 |-------|-------------|
 | `memory-workflow` | Session lifecycle, storing/retrieving memories, tiers, deduplication |
 | `decision-tracking` | Architectural decision records, check before deciding, supersede outdated |

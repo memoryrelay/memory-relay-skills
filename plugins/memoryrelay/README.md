@@ -16,10 +16,12 @@ Guided workflow skills for [MemoryRelay](https://memoryrelay.com) — persistent
 
 ### Claude Code
 
-Install via the plugin marketplace:
+```bash
+# Add the marketplace
+claude plugins add-marketplace memoryrelay/memory-relay-skills
 
-```
-/install-plugin memory-relay-skills
+# Install the plugin
+claude plugins install memoryrelay@memoryrelay
 ```
 
 Or add to your project's `.claude/settings.json`:
@@ -27,14 +29,17 @@ Or add to your project's `.claude/settings.json`:
 ```json
 {
   "enabledPlugins": {
-    "memory-relay-skills@claude-plugins-official": true
+    "memoryrelay@memoryrelay": true
   }
 }
 ```
 
 ### Prerequisites
 
-MemoryRelay tools must be available in your environment. This is typically provided by the [MemoryRelay MCP server](https://github.com/memoryrelay/mcp-server) or the [OpenClaw plugin](https://github.com/memoryrelay/openclaw-plugin).
+MemoryRelay tools must be available in your environment via one of:
+
+- **[MemoryRelay MCP server](https://github.com/memoryrelay/mcp-server)** — for Claude Code, Cursor, or any MCP-compatible client
+- **[OpenClaw plugin](https://github.com/memoryrelay/openclaw-plugin)** — for OpenClaw agents
 
 ## Usage
 
