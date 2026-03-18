@@ -1,0 +1,20 @@
+{
+  "name": "memoryrelay",
+  "owner": {
+    "name": "MemoryRelay",
+    "url": "https://memoryrelay.com"
+  },
+  "plugins": [
+    {
+      "name": "memoryrelay",
+      "description": "Persistent memory, architectural decisions, reusable patterns, project orchestration, and knowledge graphs for AI agents.",
+      "author": {
+        "name": "MemoryRelay",
+        "url": "https://memoryrelay.com"
+      },
+      "source": "./plugins/memoryrelay",
+      "category": "productivity",
+      "homepage": "https://github.com/memoryrelay/memory-relay-skills"
+    }
+  ]
+}
